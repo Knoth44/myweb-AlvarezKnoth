@@ -1,0 +1,13 @@
+.container {
+
+    background-color: 	#E9967A;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+form .search-btn {
+    color:white;
+    border-color:white;
+    background-color: #E9967A;  
+}
