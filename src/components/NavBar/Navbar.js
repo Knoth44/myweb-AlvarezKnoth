@@ -6,12 +6,12 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Cartwidget from './Cartwidget/Cartwidget';
 
 const NavbarLine = () => {
   return (  
   <div>
-   <Navbar bg="#E9967A" expand="lg">
+   <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#"> F-Cars </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -28,6 +28,7 @@ const NavbarLine = () => {
               <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <Cartwidget/>
           <Form className="d-flex">
             <Form.Control
               type="search"
