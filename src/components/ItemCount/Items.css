@@ -1,0 +1,10 @@
+.btn-btn-items { 
+    border-color:'black';
+    width: '70px';
+}
+
+.card-card-item {
+    display:'flex';
+    flex-direction:'column';
+    border-color:'#120055';
+}
