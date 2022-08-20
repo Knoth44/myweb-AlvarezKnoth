@@ -7,7 +7,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
        <Navbar/>
          <ItemListConteiner greeting="ItemListConteiner"/>
     </div>

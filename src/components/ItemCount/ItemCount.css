@@ -1,0 +1,44 @@
+.btn-items { 
+    /* border:1px black solid 6px; */
+
+    display: flex;
+    border-width: 1px;
+    border-color:#7FB3D5; 
+    border-style: solid;
+    border-radius: 6px;
+
+}
+
+.bi-bi-dash::hover {
+    background-color: #7FB3D5;
+}
+
+.card-item {
+    display: flex;
+    flex-direction:column;
+}
+
+.box-content-items  {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-content:center;
+    border-width: 1px;
+    border-color:#154360; 
+    border-style: solid;
+    border-radius: 6px;
+}
+
+.btn-btn-success{
+    align-content: center;
+    display: flex ;
+    justify-content: center;
+    margin-top: 10px;
+    
+}
+
+div.card-item.card{
+    margin-top: 10px;
+    border-color:#CD6155;
+
+}

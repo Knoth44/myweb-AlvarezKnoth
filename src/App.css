@@ -1,5 +1,7 @@
 .App {
-   background-color: 	#E9967A;
+   background-color: 	#A9CCE3;
+  width:auto;
+  height:100%;
 }
 
 .App-logo {
@@ -35,8 +37,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.navbar navbar navbar-expand-lg navbar-light bg-light {
-  color: red
 }

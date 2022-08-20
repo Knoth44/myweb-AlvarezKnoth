@@ -5,15 +5,16 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Cartwidget from './Cartwidget/Cartwidget';
+import logo from "./imgCar/logo.jpg";
+import Imagen from "react-bootstrap/Image";
  
 const NavbarLine = () => {
   return (  
-  <div>
+  <div className='navbar-menu'>
    <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#"> F-Cars </Navbar.Brand>
+        <Navbar.Brand href="#"> <Imagen src={logo} style={{width:'75px',borderRadius:'10px'}}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -22,11 +23,6 @@ const NavbarLine = () => {
             navbarScroll
           >
             <Nav.Link href="#action1">Home</Nav.Link>
-            <NavDropdown title="Marcas" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Chevrolet</NavDropdown.Item>
-              <NavDropdown.Item href="#action4"> Ford </NavDropdown.Item>
-              <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
-            </NavDropdown>
           </Nav>
           <Cartwidget/>
           <Form className="d-flex">
