@@ -1,16 +1,35 @@
 
 
 .card {
-    width: 18rem;
-    margin: 10px 10px ;
-    display: flex;
-    flex-direction:row ;
-    flex-flow: wrap;
-    box-shadow: 13px 22px 19px -3px #2471A3;
-    border-color:#154360;
-    border-width:1.5px
+  width: 250px;
+  max-width: max-content;
+  max-height: max-content;
+  height: 40rem;
+  display: flex;
+  background-color: #F5CBA7;
+  flex-flow: wrap;
+  border-color: #ffffff;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin: 10px;
   }
-  
+
+  .infoCard{
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    border:3px #ffffff solid;
+    border-radius: 10px;
+    margin-left: 100px;
+    background-color: #d6933a;
+  }
+
+  .card::hover {
+    border: 10px #ffffff solid ;
+    /* transition: all 1s; */
+
+  }
+
  /* :root {
     --shadow-color: 236deg 64% 43%;
     --shadow-elevation-low:

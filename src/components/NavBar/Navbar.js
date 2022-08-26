@@ -6,15 +6,16 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Cartwidget from './Cartwidget/Cartwidget';
-import logo from "./imgCar/logo.jpg";
+import logo from "./imgLog/onepiece.png";
 import Imagen from "react-bootstrap/Image";
+import { Link } from 'react-router-dom';
  
 const NavbarLine = () => {
   return (  
   <div className='navbar-menu'>
    <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#"> <Imagen src={logo} style={{width:'75px',borderRadius:'10px'}}/></Navbar.Brand>
+      <Link to={"/"}><Imagen src={logo} style={{width:'50px',height:'50px',borderRadius:'10px'}}/></Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -22,7 +23,7 @@ const NavbarLine = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
+           <Button variant='white'><Link style={{color:'black',textDecoration:'none'}}  to={"/"}>Home</Link></Button>
           </Nav>
           <Cartwidget/>
           <Form className="d-flex">
@@ -34,7 +35,7 @@ const NavbarLine = () => {
             />
             <Button className='search-btn' variant="dark">Search</Button>
           </Form>
-          <Button className='search-btn' href="#action2" variant="light" style={{marginLeft:'10px'}}>About Us</Button>
+          <Button className='search-btn' variant="light" style={{marginLeft:'10px'}}><Link style={{color:'black',textDecoration:'none'}} to={'/AboutUs'}>About Us</Link></Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>

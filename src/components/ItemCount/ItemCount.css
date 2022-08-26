@@ -28,7 +28,11 @@
     border-style: solid;
     border-radius: 6px;
 }
-
+.box-itemcount{
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+}
 .btn-btn-success{
     align-content: center;
     display: flex ;
@@ -37,8 +41,4 @@
     
 }
 
-div.card-item.card{
-    margin-top: 10px;
-    border-color:#CD6155;
 
-}
