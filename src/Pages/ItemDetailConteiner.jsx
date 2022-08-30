@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemDetail from "../ItemDetail/ItemDetail";
-import Spinners from "../Spinner/Spinner";
 import axios from "axios";
+import ItemDetail from "../components/ItemDetail/ItemDetail";
+import Spinners from "../components/Spinner/Spinner";
 
 const ItemDetailConteiner = () => {
 

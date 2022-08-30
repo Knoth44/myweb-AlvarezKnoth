@@ -62,7 +62,7 @@ const ItemCount = ({ initial, stockItem, onAdd }) => {
           >
             <i className="bi bi-dash" style={{ color: "black" }}></i>
           </Button>
-          <p style={{ margin: "auto", color: "black" }}>{counter}</p>
+          <p style={{ margin: "auto", color: "black", textDecoration:'none'}}>{counter}</p>
           <Button
             variant="light"
             stlye={{ color: "white" }}

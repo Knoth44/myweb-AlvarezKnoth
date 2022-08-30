@@ -1,18 +1,21 @@
 import React from 'react'
-import  Navbar from "../components/NavBar/Navbar"
+import NavBar from "../components/NavBar/Navbar"
 import { BrowserRouter, Route,Routes } from 'react-router-dom'
-import ItemListConteiner from '../components/ItemListConteiner/ItemListConteiner'
 import "../App.css"
-import ItemDetailConteiner from '../components/ItemDetailConteiner/ItemDetailConteiner'
+import Home from "../Pages/Home"
+import Footer from '../components/Footer/Footer'
+import ItemDetailConteiner from '../Pages/ItemDetailConteiner'
 
 const Rutas = () => {
   return (
    <BrowserRouter>
-     <Navbar/>
+     <NavBar/>
          <Routes>
-            <Route path='/' element={<ItemListConteiner/>}></Route>
+            <Route path='/' element={<Home/>}></Route>
             <Route path='/item/:id' element={<ItemDetailConteiner/>}></Route>
+            <Route path='/category/:categoryid' element={<Home/>}></Route>
          </Routes>
+         <Footer/>
    </BrowserRouter>
   )
 }

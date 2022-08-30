@@ -11,6 +11,7 @@ const ItemDetail = ({ detail }) => {
   //demographics[0].name
   //episodes**
   //genres[].name
+
   let generos = detail.genres;
   return (
     <div style={{ justifyContent: 'center', display: 'flex' }}>

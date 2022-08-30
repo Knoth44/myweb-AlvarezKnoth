@@ -1,0 +1,8 @@
+.Footer {
+    background-color: #f7ba82;
+    width: 100%;
+    max-height: max-content;
+    height: 120px;
+    margin-top: 4rem;
+    box-shadow: -3px -4px 5px -0px;
+}
