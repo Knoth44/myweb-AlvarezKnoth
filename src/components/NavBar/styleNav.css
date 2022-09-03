@@ -19,10 +19,11 @@ form .search-btn {
 
 .category {
     display: flex;
-    flex-wrap: wrap;
     padding: 10px;
     width: 300px;
-    justify-content: space-around;
+    height: max-content;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .category Button{

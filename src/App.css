@@ -6,6 +6,7 @@ body {
   background-size: cover;
   width:auto;
   height:100%;
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -28,9 +29,7 @@ body {
 .App-link {
   color: #61dafb;
 }
-.btn {
-  border: #E9967A;
-}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

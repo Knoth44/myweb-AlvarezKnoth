@@ -1,16 +1,20 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 import { Image } from 'react-bootstrap'
 import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
+import { useState } from 'react'
+import { Link } from "react-router-dom"
 
 const ItemDetail = ({ detail }) => {
-  //duration**
-  //manga
-  //title**
-  //demographics[0].name
-  //episodes**
-  //genres[].name
+
+  const [counter, setCounter] = useState(1)
+
+  function onAdd(counter) {
+
+    setCounter(counter);
+    
+   }
 
   let generos = detail.genres;
   return (
@@ -28,7 +32,7 @@ const ItemDetail = ({ detail }) => {
             padding: '10px',
             alignItems: 'flex-end'
           }}>
-            <Card.Title style={{ textDecoration: 'underline', padding: '0px' }}>{detail.title}</Card.Title>
+            <Card.Title style={{ textDecoration: 'underline' }}>{detail.title}</Card.Title>
             <Card.Body>
               <div>
                 <div className='detail-card'>
@@ -39,13 +43,21 @@ const ItemDetail = ({ detail }) => {
                 </div>
                 <div className='detail-card'>
                   <h6>Genero:</h6>
-                  {generos.map((item) =>
-                    <h6 key={item.id}><p>{item.name}</p></h6>)}
+                  {generos.map((item, index) =>
+                    <h6 key={index}><p>{item.name}</p></h6>)}
                 </div>
-              </div>
-              <ItemCount />
+              </div>{
+                ! counter ?
+                  <Link to={'/Cart'}> <Button variant="dark">Finalizar Compra</Button> </Link>
+                  :
+                  <ItemCount stockItem={5} initial={1} onAdd={onAdd}
+                  />}
             </Card.Body>
           </Card>
+          <div className='sinop-card'>
+            <h3> Sinopsis </h3>
+            <p>{detail.synopsis}</p>
+          </div>
         </div>
       </div>
     </div>
