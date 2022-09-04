@@ -49,7 +49,7 @@ const ItemCount = ({ initial, stockItem, onAdd }) => {
           <Button
             variant="dark"
             onClick={() => {
-              onAdd()
+              onAdd(counter)
             }}
           >
             Agregar al carrito

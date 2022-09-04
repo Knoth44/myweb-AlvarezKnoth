@@ -3,10 +3,17 @@ import { Button, Card } from 'react-bootstrap'
 import { Image } from 'react-bootstrap'
 import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from "react-router-dom"
+import  {CartContext }  from '../../context/CartProvider'
 
 const ItemDetail = ({ detail }) => {
+
+  const {
+    addItem,
+    removeItem,
+    clear
+  } = useContext(CartContext)
 
   const [counter, setCounter] = useState(1)
 
@@ -14,7 +21,8 @@ const ItemDetail = ({ detail }) => {
 
     setCounter(counter);
     
-   }
+    addItem(detail,counter)
+  }
 
   let generos = detail.genres;
   return (
@@ -47,7 +55,7 @@ const ItemDetail = ({ detail }) => {
                     <h6 key={index}><p>{item.name}</p></h6>)}
                 </div>
               </div>{
-                ! counter ?
+                !counter ?
                   <Link to={'/Cart'}> <Button variant="dark">Finalizar Compra</Button> </Link>
                   :
                   <ItemCount stockItem={5} initial={1} onAdd={onAdd}
