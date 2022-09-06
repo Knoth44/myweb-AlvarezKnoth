@@ -5,26 +5,27 @@ import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
 import { useState, useContext } from 'react'
 import { Link } from "react-router-dom"
-import  {CartContext }  from '../../context/CartProvider'
+import { CartContext } from '../../context/CartProvider'
 
 const ItemDetail = ({ detail }) => {
 
   const {
     addItem,
-    removeItem,
-    clear
   } = useContext(CartContext)
 
-  const [counter, setCounter] = useState(1)
+  const [counter, setCounter] = useState()
 
-  function onAdd(counter) {
+  function onAdd(count) {
 
-    setCounter(counter);
-    
-    addItem(detail,counter)
+    setCounter(count);
+
+    addItem(detail, count)
+
   }
 
-  let generos = detail.genres;
+  if(!detail.price){
+  detail.price = Math.floor(Math.random() * (2000 - 200) + 200)}
+
   return (
     <div style={{ justifyContent: 'center', display: 'flex' }}>
       <div className='card-container'>
@@ -33,7 +34,7 @@ const ItemDetail = ({ detail }) => {
         </div>
         <div className='card-info' >
           <Card style={{
-            height: '26rem',
+            height: '30rem',
             display: 'flex',
             width: 'auto',
             maxWidth: 'max-content',
@@ -51,11 +52,14 @@ const ItemDetail = ({ detail }) => {
                 </div>
                 <div className='detail-card'>
                   <h6>Genero:</h6>
-                  {generos.map((item, index) =>
+                  {detail.genres.map((item, index) =>
                     <h6 key={index}><p>{item.name}</p></h6>)}
                 </div>
+                <div className='detail-card'>
+                  <h6>Precio: <p>${detail.price}</p></h6>
+                </div>
               </div>{
-                !counter ?
+                counter ?
                   <Link to={'/Cart'}> <Button variant="dark">Finalizar Compra</Button> </Link>
                   :
                   <ItemCount stockItem={5} initial={1} onAdd={onAdd}

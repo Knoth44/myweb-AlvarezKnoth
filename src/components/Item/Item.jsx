@@ -14,7 +14,7 @@ const Item = ({ id, nameItem, img }) => {
           src={img.jpg.image_url}
           style={{ borderColor: 'black' }}
         ></Card.Img>
-        <Card.Body style={{ color: "white", backgroundColor: "#d6933a" , display:'flex', flexDirection:'column'}}>
+        <Card.Body style={{ color: "white", backgroundColor: "#d6933a", display: 'flex', flexDirection: 'column' }}>
           <Card.Title style={{ display: 'inline-block' }}>{nameItem}</Card.Title>
           <Card.Text>
           </Card.Text>

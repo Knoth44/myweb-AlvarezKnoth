@@ -13,6 +13,7 @@ const ItemList = ({ products }) => {
           img={
             item.images
           }
+          price={item.price}
         ></Item>
       ))}
     </div>

@@ -22,14 +22,15 @@ const Home = () => {
         let productsFilters = [];
         productsFilters = categoryid ? categoryAnime.filter(items => items.genres.some((i) => i.name === categoryid && items))
           : productsFilters = categoryAnime
-        setproducts(productsFilters);
+        setproducts(productsFilters)
       } catch (err) {
         console.log(err);
       }
     };
-    promiseAsync();
+    promiseAsync(); 
 
   }, [categoryid]);
+
 
   useEffect(() => {
 

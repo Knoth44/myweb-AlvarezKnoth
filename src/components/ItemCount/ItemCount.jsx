@@ -10,7 +10,7 @@ const ItemCount = ({ initial, stockItem, onAdd }) => {
   function setterCount(a, b, c) {
     (a < b) && c(a + 1);
   }
-
+ 
   function setterCount_1(a, b, c) {
     (a > b) && c(a - 1);
   }
