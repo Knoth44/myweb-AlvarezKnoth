@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 
 const Item = ({ id, nameItem, img }) => {
 
-
   return (
     <>
       <Card>
         <Card.Img
           variant="top"
-          src={img.jpg.image_url}
+          src={img[0]}
           style={{ borderColor: 'black' }}
         ></Card.Img>
         <Card.Body style={{ color: "white", backgroundColor: "#d6933a", display: 'flex', flexDirection: 'column' }}>

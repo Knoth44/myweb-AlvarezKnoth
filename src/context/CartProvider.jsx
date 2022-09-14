@@ -8,9 +8,9 @@ const CartProvider = ({ children }) => {
 
   function addItem(item, quantity) {
 
-    if (isInCart(item.mal_id)) {
+    if (isInCart(item.id)) {
       let aux = cart ;
-      let arrInx = aux.findIndex(i => i.mal_id === item.mal_id)
+      let arrInx = aux.findIndex(i => i.id === item.id)
       aux[arrInx].quantity += quantity
       setCart([...aux])
     } else {
@@ -20,7 +20,7 @@ const CartProvider = ({ children }) => {
   }
 
   function removeItem(id) {
-    let arr = cart.filter(item => item.mal_id !== id && item)
+    let arr = cart.filter(item => item.id !== id && item)
     setCart(arr)  
   }
  
@@ -29,7 +29,7 @@ const CartProvider = ({ children }) => {
   }
 
   function isInCart(itemId) {
-    return cart.find(i => i.mal_id === itemId)
+    return cart.find(i => i.id === itemId)
   }
 
   return (

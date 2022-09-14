@@ -15,7 +15,7 @@ const Rutas = () => {
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='/item/:id' element={<ItemDetailConteiner />}></Route>
+        <Route path='/item/:idItem' element={<ItemDetailConteiner />}></Route>
         <Route path='/category/:categoryid' element={<Home />}></Route>
         <Route path='/cart' element={<Cart />}></Route>
       </Routes>

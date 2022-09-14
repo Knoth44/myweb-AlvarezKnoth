@@ -1,6 +1,5 @@
 .btn-items { 
-    /* border:1px black solid 6px; */
-
+    
     display: flex;
     border-width: 1px;
     border-color:#7FB3D5; 
@@ -13,11 +12,6 @@
     background-color: #7FB3D5;
 }
 
-/* .card-item {
-    display: flex;
-    flex-direction:column;
-} */
-
 .box-content-items  {
     display:flex;
     flex-direction:row;
@@ -27,15 +21,25 @@
     border-color:#154360; 
     border-style: solid;
     border-radius: 6px;
+    display: flex;
+
 }
 
 .btn-btn-success{
+    
     align-content: center;
     display: flex ;
     justify-content: center;
     margin-top: 10px;
     width: 200px;
     border: #ffffff;
+    letter-spacing: .1rem;
 }
 
 
+.box-itemcount{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
