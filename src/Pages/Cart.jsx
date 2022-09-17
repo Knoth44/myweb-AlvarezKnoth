@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi'
 import "./Cart.css"
 import Formulario from '../components/Formulario/Formulario';
+import Footer from '../components/Footer/Footer';
+import NavBar from '../components/NavBar/Navbar';
 
 function Cart() {
 
@@ -17,8 +19,10 @@ function Cart() {
   } = useContext(CartContext)
 
   let aux = cart.reduce((a, b) => a + (b.price * b.quantity), 0);
+
   return (
     <>
+      <NavBar />
       <div>
         <Link to='/'><Button style={{ backgroundColor: 'white', margin: '10px', color: 'black', borderColor: 'black' }}><BiArrowBack></BiArrowBack></Button></Link>
       </div>
@@ -34,7 +38,7 @@ function Cart() {
         <div>
 
           {cart.length <= 0 ?
-            <div style={{ display: 'flex', alignItems: 'center', backgroundColor: 'white', height: '200%', borderRadius: '12px', padding: '10px 1%', margin: '10px', justifyContent: 'space-between' }}>
+            <div style={{ display: 'flex', alignItems: 'center', backgroundColor: 'white', height: '200%', borderRadius: '12px', padding: '10% 1%', margin: '10%', justifyContent: 'space-between' }}>
               <b style={{ color: 'red', alignItems: 'center' }}>No hay productos</b>
             </div>
             :
@@ -46,20 +50,27 @@ function Cart() {
                   <p>ID: {item.id}</p>
                   <p>Cantidad:{item.quantity}</p>
                   <p>Precio:{item.price}</p>
-                  <Button style={{ backgroundColor: 'white', borderColor: 'black', marginLeft: '50px' }} onClick={() => removeItem(item.id)}><BsTrash style={{ color: 'red' }} /></Button>
+                  <Button style={{ backgroundColor: 'white', borderColor: 'black', marginLeft: '50px' }} onClick={() => removeItem(item)}><BsTrash style={{ color: 'red' }} /></Button>
                 </div>
               </div>
             )}
           {cart.length > 0 &&
-            <div  >
-              <Formulario items={cart} total={aux} />
-            </div>}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h4>Precio final : ${aux}</h4>
-            <Button onClick={clearCart} vartiant='ligth' style={{ backgroundColor: 'white', color: 'black', borderColor: 'black', display: 'block' }}> Vaciar Carrito</Button>
-          </div>
+            <>
+              <div  >
+                <Formulario items={cart} total={aux} />
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <h4>Precio final : ${aux}</h4>
+              </div>
+              <div>
+                <Button onClick={clearCart} vartiant='ligth' style={{ backgroundColor: 'white', color: 'black', borderColor: 'black', display: 'block' }}> Vaciar Carrito</Button>
+              </div>
+            </>
+          }
+
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -7,9 +7,11 @@ import { useState, useContext } from 'react'
 import { Link } from "react-router-dom"
 import { BiArrowBack } from "react-icons/bi"
 import { CartContext } from '../../context/CartProvider'
+import { GlobalProvider } from '../../context/GlobalProvider'
 
 const ItemDetail = ({ detail }) => {
-
+  
+ const { setAlerta, setMsg, setError } = GlobalProvider()
   let obj;
   detail.forEach(element => {
     obj = {
@@ -25,8 +27,10 @@ const ItemDetail = ({ detail }) => {
 
   function onAdd(count) {
 
+    setAlerta(true)
+    setError(true)
+    setMsg(`Se añadio al carrito '${obj.title}'`)
     setCounter(count);
-
     addItem(obj, count)
 
   }
@@ -42,7 +46,6 @@ const ItemDetail = ({ detail }) => {
             <Card style={{
               width: '100%',
               height: 'auto',
-              // 
             }}>
               <Card.Body style={{ display: 'flex', width: '100%' }}>
                 <div>
