@@ -9,8 +9,8 @@ function Spinners() {
     <>
       {
         cargar && (
-          <div style={{display:'flex', justifyContent:'center',marginTop:'20rem'}}>
-            <Spinner style={{ width: "3rem", height: "3rem" }} animation="border" variant="primary" />
+          <div style={{display:'flex', justifyContent:'center'}}>
+            <Spinner style={{ width: "3rem", height: "3rem",position:'absolute',marginTop:'20%' }} animation="border" variant="primary" />
           </div>
         )
       }

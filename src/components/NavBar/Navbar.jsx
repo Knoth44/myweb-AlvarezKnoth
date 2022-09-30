@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styleNav.css'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -10,49 +10,34 @@ import logo from "./imgLog/onepiece.png";
 import Imagen from "react-bootstrap/Image";
 import { Link } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
-import { useState, useEffect } from 'react';
-import axios from 'axios'
+import { GlobalProvider } from '../../context/GlobalProvider';
 
 const NavBar = () => {
+  const [search, setSearch] = useState("")
+  const { setBuscar } = GlobalProvider()
 
-  const [category, setCategory] = useState({})
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setBuscar(search);
+    
+  }
 
-  useEffect(() => {
-
-    const promiseId = async () => {
-
-      try {
-        const animeID = await axios.get(`https://api.jikan.moe/v4/top/anime`, { timeout: 5000 })
-        const response = await animeID.data
-        const genres = await response.data.map(i => i.genres) 
-        let aux = [];
-        genres.filter(i => i.map(j=> !aux.includes(j.name) && aux.push(j.name)))
-        setCategory(aux)
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    promiseId()
-
-  }, []);
-
+  let arregloCategory = ['Comedy', 'Mystery', 'Supernatural', 'Slice of Life', 'Drama', 'Suspense', 'Action', 'Sci-Fi', 'Adventure', 'Fantasy', 'Romance']
   return (
-
-    <Navbar bg="light" expand="lg" style={{width:'100%',height:'auto'}}>
+    <Navbar bg="light" expand="lg" style={{ width: '100%', height: 'auto' }}>
       <Container fluid>
         <Link to={"/"}><Imagen src={logo} style={{ width: '50px', height: '50px', borderRadius: '10px' }} /></Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}  
+            style={{ maxHeight: '100px' }}
             navbarScroll
           >
             <Button variant='white' style={{ marginLeft: '10px' }}><Link style={{ color: 'black', textDecoration: 'none' }} to={"/"}>Home</Link></Button>
             <NavDropdown title="Generos" id="basic-nav-dropdown" >
               <div className='category' >
-                {category.length >= 0 ? category.map((item, index) =>
+                {arregloCategory.length >= 0 ? arregloCategory.map((item, index) =>
                   <Button key={index} variant='ligth' >
                     <Link style={{ textDecoration: 'none', color: '#E9967A', borderColor: '#E9967A' }} to={`/category/${item}`}>
                       {item}
@@ -65,14 +50,15 @@ const NavBar = () => {
             </NavDropdown >
           </Nav>
           <Cartwidget />
-          <Form className="d-flex">
+          <Form className="d-flex" onSubmit={handleSubmit} >
             <Form.Control
-              type="search"
+              type="text"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              onChange={(e) => setSearch(e.target.value)}
             />
-            <Button className='search-btn' variant="dark">Search</Button>
+            <Button type='submit' className='search-btn' variant="dark">Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

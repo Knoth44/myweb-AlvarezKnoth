@@ -3,15 +3,15 @@ import { Button, Card } from 'react-bootstrap'
 import { Image } from 'react-bootstrap'
 import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { Link } from "react-router-dom"
 import { BiArrowBack } from "react-icons/bi"
 import { CartContext } from '../../context/CartProvider'
 import { GlobalProvider } from '../../context/GlobalProvider'
 
 const ItemDetail = ({ detail }) => {
-  
- const { setAlerta, setMsg, setError } = GlobalProvider()
+
+  const { setAlerta, setMsg, setError } = GlobalProvider()
   let obj;
   detail.forEach(element => {
     obj = {
@@ -23,14 +23,11 @@ const ItemDetail = ({ detail }) => {
     addItem,
   } = useContext(CartContext)
 
-  const [counter, setCounter] = useState()
-
   function onAdd(count) {
 
     setAlerta(true)
     setError(true)
     setMsg(`Se añadio al carrito '${obj.title}'`)
-    setCounter(count);
     addItem(obj, count)
 
   }

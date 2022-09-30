@@ -1,4 +1,36 @@
-.itemCart p{
+.itemCart p {
     text-decoration: none;
-    margin-left: 100px;
+    margin-left: 10px;
+}
+
+.boxcard {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+.itemCart {
+    display: flex;
+    background-color: white;
+    height: 200%;
+    border-radius: 12px;
+    padding: 1em;
+    margin: 3em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 720px) {
+    .itemCart {
+        flex-direction: column;
+        margin-left: 10px;
+        margin-right: 10px;
+        align-items: center;
+    }
 }

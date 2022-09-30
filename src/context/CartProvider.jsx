@@ -20,7 +20,6 @@ const CartProvider = ({ children }) => {
       setCart([...cart , { ...item, quantity }])
       setAlerta(true)
     }
-
   }
 
   function removeItem(item) {
@@ -29,7 +28,6 @@ const CartProvider = ({ children }) => {
     setAlerta(true)
     setError(false)
     setMsg(`Se saco del carrito '${title}'`)
-  
     setCart(arr)  
   }
  

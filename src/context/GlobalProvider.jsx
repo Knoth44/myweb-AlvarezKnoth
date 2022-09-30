@@ -10,7 +10,7 @@ const GlobalState = ({ children }) => {
     const [cargar, setCargar] = useState(false);
     const [msg, setMsg] = useState()
     const [error , setError] = useState(true)
-
+    const [buscar,setBuscar] = useState("")
 
     return (
         <GlobalContext.Provider value={{
@@ -21,7 +21,9 @@ const GlobalState = ({ children }) => {
             msg,
             setMsg,
             error,
-            setError
+            setError,
+            setBuscar,
+            buscar
         }}>
             {children}
         </GlobalContext.Provider>
